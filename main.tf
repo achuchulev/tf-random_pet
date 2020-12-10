@@ -11,12 +11,11 @@ resource "random_pet" "random_repo2" {
 
 # Generate 2 dynamic repos with the generated random names
 resource "github_repository" "random1" {
-  name        = "${random_pet.random_repo1.id}"
+  name        = random_pet.random_repo1.id
   description = "My random_pet project"
 }
 
 resource "github_repository" "random2" {
-  name        = "${random_pet.random_repo2.id}"
+  name        = random_pet.random_repo2.id
   description = "My random_pet project"
 }
-
